@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Restaurant Starter V3 | Speisekarte</title>
-  <meta name="description" content="Karivo Restaurant Starter Vorlage V3 mit professioneller Speisekarte, Kategorien, Karten, Preisen und Animationen." />
+  <title>Restaurant Starter V4 | Kontakt & Reservierung</title>
+  <meta name="description" content="Karivo Restaurant Starter Vorlage V4 mit Reservierungsformular, Formspree-Vorbereitung, Öffnungszeiten, Google Maps, Social Media und Footer." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,10 +27,11 @@
       <a href="#start">Start</a>
       <a href="#ueber-uns">Über uns</a>
       <a href="#speisekarte">Speisekarte</a>
+      <a href="#reservierung">Reservierung</a>
       <a href="#kontakt">Kontakt</a>
     </nav>
 
-    <a href="#kontakt" class="header-cta">Reservieren</a>
+    <a href="#reservierung" class="header-cta">Reservieren</a>
 
     <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen">
       <span></span>
@@ -49,11 +50,11 @@
           <h1>Feine Küche in moderner Atmosphäre.</h1>
           <p class="hero-copy">
             Eine hochwertige Starter-Website für Restaurants, Cafés und Bistros.
-            Jetzt mit echter Speisekarten-Struktur.
+            Jetzt mit Kontaktbereich und Reservierungsformular.
           </p>
 
           <div class="hero-actions">
-            <a href="#kontakt" class="btn btn-primary">Tisch anfragen</a>
+            <a href="#reservierung" class="btn btn-primary">Tisch anfragen</a>
             <a href="#speisekarte" class="btn btn-secondary">Speisekarte ansehen</a>
           </div>
 
@@ -76,8 +77,8 @@
         <aside class="hero-reservation reveal">
           <span class="card-label">Schnellanfrage</span>
           <h3>Heute noch einen Tisch sichern.</h3>
-          <p>Dieser Bereich wird später mit Reservierungsformular oder Kontaktbutton erweitert.</p>
-          <a href="#kontakt" class="small-link">Reservierung starten →</a>
+          <p>Direkt zum Reservierungsformular springen und Anfrage senden.</p>
+          <a href="#reservierung" class="small-link">Reservierung starten →</a>
         </aside>
       </div>
 
@@ -171,33 +172,112 @@
       </div>
     </section>
 
-    <section class="section ambiance" id="ambiente">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">Ambiente</p>
-          <h2>Räume, die Gäste willkommen heißen.</h2>
-          <p>Dieser Bereich zeigt später echte Bilder vom Restaurant.</p>
+    <section class="section reservation-section" id="reservierung">
+      <div class="container reservation-grid">
+        <div class="reservation-copy reveal">
+          <p class="eyebrow">Reservierung</p>
+          <h2>Reservierungsanfrage senden.</h2>
+          <p>
+            Das Formular ist für Formspree vorbereitet. Ersetze später nur den Link
+            im <strong>action</strong>-Attribut durch deinen eigenen Formspree-Link.
+          </p>
+
+          <div class="reservation-points">
+            <div>
+              <span>📩</span>
+              <strong>Formspree vorbereitet</strong>
+              <p>Der Kunde erhält Anfragen direkt per E-Mail.</p>
+            </div>
+            <div>
+              <span>📱</span>
+              <strong>Mobil optimiert</strong>
+              <p>Reservierung funktioniert sauber auf Smartphone und Desktop.</p>
+            </div>
+          </div>
         </div>
 
-        <div class="ambiance-grid reveal">
-          <div class="ambiance-card large"><span>Innenbereich</span></div>
-          <div class="ambiance-card"><span>Gerichte</span></div>
-          <div class="ambiance-card"><span>Außenbereich</span></div>
-        </div>
+        <form class="reservation-form reveal" action="https://formspree.io/f/DEIN-FORMSPREE-LINK" method="POST">
+          <div class="form-row">
+            <label>
+              Name
+              <input type="text" name="name" placeholder="Max Mustermann" required>
+            </label>
+            <label>
+              Telefon
+              <input type="tel" name="telefon" placeholder="030 12345678">
+            </label>
+          </div>
+
+          <div class="form-row">
+            <label>
+              E-Mail
+              <input type="email" name="email" placeholder="kontakt@mail.de" required>
+            </label>
+            <label>
+              Personen
+              <input type="number" name="personen" placeholder="2" min="1">
+            </label>
+          </div>
+
+          <div class="form-row">
+            <label>
+              Datum
+              <input type="date" name="datum">
+            </label>
+            <label>
+              Uhrzeit
+              <input type="time" name="uhrzeit">
+            </label>
+          </div>
+
+          <label>
+            Nachricht
+            <textarea name="nachricht" placeholder="Reservierungswunsch oder Nachricht" required></textarea>
+          </label>
+
+          <button class="btn btn-primary" type="submit">Anfrage senden</button>
+        </form>
       </div>
     </section>
 
-    <section class="section contact-preview" id="kontakt">
-      <div class="container contact-box reveal">
-        <div>
+    <section class="section contact-section" id="kontakt">
+      <div class="container contact-grid">
+        <div class="contact-card reveal">
           <p class="eyebrow">Kontakt</p>
-          <h2>Reservierung und Kontaktdaten kommen in V4.</h2>
-          <p>
-            V3 ergänzt die Website um eine saubere Speisekarte mit Kategorien und moderner Darstellung.
-          </p>
+          <h2>Adresse & Kontaktdaten</h2>
+
+          <div class="contact-list">
+            <p><strong>Adresse:</strong> Musterstraße 1, 12345 Berlin</p>
+            <p><strong>Telefon:</strong> 030 12345678</p>
+            <p><strong>E-Mail:</strong> kontakt@restaurant.de</p>
+          </div>
+
+          <div class="social-links">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">WhatsApp</a>
+          </div>
         </div>
 
-        <a href="mailto:kontakt@restaurant.de" class="btn btn-primary">Kontakt aufnehmen</a>
+        <div class="hours-card reveal">
+          <p class="eyebrow">Öffnungszeiten</p>
+          <h2>Wir freuen uns auf Ihren Besuch.</h2>
+
+          <ul>
+            <li><span>Montag</span><strong>Ruhetag</strong></li>
+            <li><span>Dienstag - Freitag</span><strong>12:00 - 22:00</strong></li>
+            <li><span>Samstag</span><strong>12:00 - 23:00</strong></li>
+            <li><span>Sonntag</span><strong>12:00 - 21:00</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container map-wrap reveal">
+        <iframe
+          title="Google Maps"
+          src="https://www.google.com/maps?q=Berlin&output=embed"
+          loading="lazy">
+        </iframe>
       </div>
     </section>
   </main>
@@ -206,7 +286,14 @@
     <div class="container footer-grid">
       <div>
         <strong>Restaurant Name</strong>
-        <p>Karivo Restaurant Starter Vorlage – Version 3 Speisekarte.</p>
+        <p>Karivo Restaurant Starter Vorlage – Version 4 Kontakt & Reservierung.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#start">Start</a>
+        <a href="#ueber-uns">Über uns</a>
+        <a href="#speisekarte">Speisekarte</a>
+        <a href="#reservierung">Reservierung</a>
       </div>
 
       <div class="footer-links">
